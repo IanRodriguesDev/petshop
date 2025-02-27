@@ -1,0 +1,315 @@
+/* Variaveis scss */
+$purple: #A050BE;
+$ligth-grey: #eaeaeb;
+$dark_grey: #464646;
+$yellow: #fade50;
+$img-width: 45%;
+
+/* Editando o cabeçalho */
+.header {                                       
+    font-family: Arial, Helvetica, sans-serif; /* Alterando o estilo da fonte para Arial */
+
+    /* Editando a logo */
+    &__logo {
+        text-align: center; /* Centralizando a logo */
+    }
+
+    /* Editando a imagem */
+    &__img {
+        max-width: 350px; /* Definindo o tamanho(width) da imagem */
+    }
+
+    /* Estiliando a lista de links */
+    .menu{
+        &__list {
+            display: flex; /* Deixando a lista alinhada com a horizontal*/
+            justify-content: center;    /* Deixando a lista no centro da página */
+            border-top: 1px solid $ligth-grey; /* Cria uma linha em cima dos links */
+            border-bottom: 1px solid $ligth-grey; /* Cria uma linha em baixo dos links */
+            margin-left: auto; /* Alinha o conteudo para a direita */
+            margin-right: auto; /* Alinha o conteudo para a esquerda */
+            width: 80%; /* Informa que a lista ocupara um espaço de 80% */
+            padding: 20px 0; /* Da um espaçamento interno de 20px */
+        }
+
+        /* Estilizando a saida dos links */
+        &__links {
+            position: relative; /* Cria um contexto de posicionamento para o after */
+
+            /* Criando o 'traço' em volta dos links */
+            &:not(:last-child):after {
+                content: ""; /* Definindo que o conteúdo será vazio */
+                position: absolute; /* Definindo posição */
+                top: 0; /* Distancia do topo 0 */
+                bottom: 0; /* Distancia do conteúdo de baixo 0 */
+                right: -3px; /* Movendo para a direita */
+                margin: auto; /*Coloca a margem como automática*/
+                height: 15px; /* Define o tamanho do traço como 15px */
+                width: 1px; /*Define a largura como 1px, justamente para ser um traço*/
+                background-color: $ligth-grey; /* define o traço com a cor cinza */
+            }   
+        }
+
+        /* Alterando diretamente os links */
+        &__link {
+            padding: 0 25px; /* Define o espacamento para a esquerda e a direita como auto */
+            color: $dark_grey; /* Cor de fundo cinza */
+
+            /* Ações ao passar o mouse por cima dos links */
+            &:hover {
+                color: $purple; /* Muda a cor da letra dos links de cinza para roxo */
+            }
+        }
+    } 
+}
+
+/* Estilizando o rodapé */
+.footer {
+    text-align: center; /* Jogando o texto para o centro da tela */
+    padding: 20px 0; /* Colocando espaçamenteo interno de 2p px para cime e para baixo e 0 para os lados */
+    font-family: Arial, Helvetica, sans-serif; /* Colocando a fonte do texto como Arial */
+    position: relative; /* Determinando o tipo de posição */
+    bottom: 0; /* Distância do final da página 0 */
+    left: 50%; /* Distância da esquerda da página de 50% da página*/
+    transform: translateX(-50%);
+
+    /* Estilizando a imagem do rodapé */
+    &__logo {
+        max-width: 100px; /* Determinando largura máxima da imagem no rodapé */
+    }
+
+    /* Estilizando o texto do rodapé */
+    &__txt {
+        margin: auto; /* Determinando a margin como centralizado horizontalmente*/
+        font-size: 14px; /* Colocando o tamanho da letra como 14px */
+    }
+}
+
+/* Estilizando o main */
+.main {
+    display: flex; /* Ativando o flexbox, facilitando o alinhamento e distribuição de elementos dentro de um contêiner */
+    justify-content: center; /* Alinhando o conteúdo horizontalmente, com referência ao centro */   
+    flex-wrap: wrap; /* Os itens quebrarão a linha e nao diminuirão o seu tamanho */
+    font-family: Arial, Helvetica, sans-serif; /* Definindo que a fonte dos conteúdos dentro do main serão arial */
+
+    /* Estilizando o conteúdo do main*/
+    &__content {
+        width: 70%; /* O tamanho do conteúdo será de 70% da página */
+        padding: 40px 8px;  /* O conteúdo terá um espaçamento interno de 40px para cima e para baixo e 8px para os lados */
+    }
+      
+    /* Estilizando os posts */
+    &__post {
+        text-align: center; /* Centralizando o texto */
+        max-width: 800px; /* Define o tamnho máximo do post como 800 */
+        margin-left: auto; /* O contúdo ficará no centro do conteiner pai 'main'*/
+        margin-right: auto; /* O contúdo ficará no centro do conteiner pai 'main'*/
+    }
+
+    &__title {
+        text-decoration: none; /* Sem decoração padronizada para o título */
+        font-size: 22px; /* Tamanho da letra de 22px */
+        color: $dark_grey; /* Cor da letra */
+        letter-spacing: 1.5px; /* Aumenta o espaçamento entre as letras em 1.5px */
+
+        /* Estilizando o hover */
+        &:hover{
+            color: $purple; /* Assim que o mouse passar por cima do título ele ficará roxo*/
+        }
+    }
+
+    /* Estilizando o sub-titulo */
+    &__subtilte {
+        display: flex; /* Ativa o flexbox, facilitando o alinhameto e distribuição de elementos dentro de um contêiner */
+        justify-content: center; /* Centraliza o conteúdo dentro de um contêiner */
+        align-items: center; /* Alinha os itens ao centro eixo transversal */
+        margin-top: 10px; /* Aumenta o espaço com o conteúdo do topo em 10px */
+        margin-bottom: 20px; /* Aumenta o espaço com o conteúdo de baixo 20px */
+    }
+
+    /* Estilizando a data */
+    &__date {
+        margin: 0 10px; /* Margem de  0 para cima e para baixo o e 10px para os lados */
+        font-size: 12px; /* Tamanho da letra 12px */
+        font-style: italic; /* Fonte da letra italic */
+    }
+
+    /* Estilizando a tag */
+    &__tag {
+        font-size: 14px; /* Tamanho da letra 14px */
+        padding: 5px 7px; /* Espaçamento interno de 5px para cima e para baixo e 7px para os lados */ 
+        color: $purple; /* Cor da letra roxo */
+        border: 1px solid $purple; /* Borda de 1px e da cor roxa */
+        margin: 0 10px; /* Margem de 0px para cima e para baixo e 10px para os lados */
+    }
+
+    /* Estilizando os detalhes */
+    &__details {
+        border: 1px solid $ligth_grey; /* Borda de 1px da cor cinza claro */
+    }
+
+    /* Estilizando a imagem */
+    &__img {
+        max-width: 100%; /* Definindo que o tamanho da página será de 100% em relação a sua classe pai */
+    }
+
+    /* Estilizando a descrição */
+    &__description {
+        padding: 40px 0 25px; /* Espaçamento interno de 40px para cima 0 para os lado e 25px para baixo */
+        max-width: 650px; /* Tamanho maximo do conteúdo de 650 */
+        margin-left: auto; /* Margin para a direita autmomatica */
+        margin-right: auto; /* Margin para a esquerda autmomatica */
+        font-size: 14px;    /* Tamanho da fonte */
+    } 
+
+    /* Estilizando o botão*/
+    &__btn {
+        text-decoration: none; /* Remove a decoração de texto pré-definida para os botões */
+        font-size: 16px; /* Tamanho da letra de 16px */
+        letter-spacing: 1.5px; /* Espaçamento entre as letras de 1.5px */
+        color: $purple; /* Cor da letra roxo */
+        background-color: $yellow; /* Espaço da cor amarela */
+        padding: 10px 20px; /* Espaçamento interno de 10px para cima e para baixo e de 20px para os lados */
+        transition: .3; /* Tempo para troca de cores configurado para 3 segundos */
+            
+            /* Estilizando o hover */
+            &:hover {
+                color:  $yellow; /* Cor ao passar o mouse vai para amarela */
+                background-color: $purple; /* Cor do espaço ao passar o mouse por cima vai para roxo */
+            }
+    }
+    
+    /* Extilizando a informação da imagem */
+    &__info {
+        display: flex; /* Ativando o flexbox, facilitando o alinhamento e destribuição de um elemento dentro de um contêiner */
+        justify-content: space-around; /* Da um espaçamento nas extremidades do contêiner e o dobro desse espaçamento entre eles */
+        align-items: center; /* Alinha os itens ao centro do contêiner */
+        border-top: 1px solid $ligth-grey; /* Borda para cima*/
+        margin-top: 30px; /* Margem do conteúdo de cima de 30px*/
+    }
+    
+    /* Estilizando o autor */
+    &__autor {
+        width: 50%; /* O conteúdo será de 50% do contêiner da sua classe pai */
+        border: 1px solid $ligth-grey; /* Borda para direita */
+    }
+
+    /*Estilizando os paragrafos*/
+    &__p {
+        font-size: 14px; /* O tamanho das letras serão de 14px */
+        color: $dark_grey; /* A cor da letra será cinza escuro */
+        margin-top: 10px; /* Margem para cima de 10px */
+        margin-bottom: 10px; /* Margem para baixo de 10px */
+    }
+
+    /* Estilizando o comentario */
+    &__comment {
+        width: 50%; /* O conteúdo será de 50% do contêiner da sua classe pai */
+    }
+
+    /* Estilizando o link */
+    &__a {
+        text-decoration: none; /* Removendo a formatação pré-definida para os links */
+        font-size: 14px; /* Tamanho da letra de 14px */
+        color: $dark_grey; /* Cor da letra cinza escur0 */
+        margin-top: 10px; /*  Margem para cima de 10px */
+        margin-bottom: 10px;/* Margem para baixo de 10px */
+        
+        /* Estilizando o hover */
+        &:hover {
+            color: $purple; /* Quando o mouse passar por cima do link a cor da letra será roxa */ 
+        }
+    }
+}
+
+/* Estilizando o conteúdo principal do site */
+.about {
+    width: 80%; /* Define o quanto vai ocupar da tela */
+    margin: 0 auto 40px; /* Distançia do proximo conteúdo de 0 para o de cima automatico para os dos lados e 40 para baixo */
+    font-family: Arial, Helvetica, sans-serif; /* Define a font que será usado nesta parte do site */
+
+    /* Estilizando o título da página */
+    &__title {
+        background-color: $ligth-grey; /* Fundo do título  */
+        text-align: center; /* Textos no centro */
+        padding: 20px; /* Espaçamento interno de 20px para todos os lados */
+    }
+
+    /* Estilizando o texto do título */
+    &__h1{
+        font-size: 22px; /* Tamanho da letra */
+        color: $dark_grey; /* Cor da letra */
+        letter-spacing: 1px; /* Espaço entre as letras */ 
+        margin-top: 5px; /* margem para cima */
+        margin-bottom: 10px; /* para baixo */
+        margin-left: 0; /* para a direita */
+        margin-right: 0; /* e para a esquerda */
+    }
+
+    /* Estilizando Breadcrumb */
+    .breadcrumb {
+        display: flex; /* Forma como serão exibidos */
+        justify-content: center; /* Alinha o conteudo horizontalmente no flex/grid */
+        align-items: center; /* Alinha os itens verticalmente no flex/gridS */
+
+        /* Estilizando os links */
+        &__link{
+            font-size: 12px; /* Tamanho da letra */
+            text-decoration: none; /* Sem decoração pre-definida */
+            color: $dark_grey; /* cor da letra */
+
+            /* Estilizando o hover */
+            &:hover {
+                text-decoration: underline; /* Sublinha o texto */
+                color: $purple; /* Muda a cor */
+            }
+        }
+
+        /* Estlizando a imagem */
+        &__img {
+            width: 10px; /* Largura da imagem */
+            margin: 8px; /* Distancia para o proximo conúdo */
+        }
+    }
+
+    /* Estlizando a imagem */
+    &__img {
+        width: 100%; /* Largura da imagem */
+        margin-bottom: 20px; /* Distancia para o proximo conúdo de baixo */
+    }
+
+    /* Estilizando a itrodução */
+    &__intro {
+        font-weight: 100; /* Muda a espessura */
+        color: $dark_grey; /* Cor da letra */
+        width: 50%; /* Largura comparado com a tela */
+        margin: 30px auto; /* Margin pra o proximo conteúdo 30px para cima e para baixo e auto para os lados */
+        text-align: center; /* Alinha o texto ao centro da página */
+        font-size: 16px; /* tamanho da letra */
+    }
+
+    /* Estiliazanod o split */
+    &__split {
+        display: flex; /* Definindo a apresentação */
+        justify-content: space-between; /* Distribui os itens igualmente tanto na borda esquerda quanto na da direita */
+        flex-wrap: wrap; /* Define que se o espaço acabar o contúdo pode quebrar alinha até chegar ao seu fim */
+        align-items: center; /* Centraliza o conteúdo verticalmente */
+    }
+
+    /* Estilizando a imagem */
+    &__img2 {
+        width: 45%; /* Tamaho comparado com a tela */
+    }
+
+    /* Estilizando o texto */
+    &__txt {
+        width: calc(100% - #{$img-width}); /* Usando a varivale '$img-width' que tem o valor de 45%, resulta na largura da umagem comparado com a tela de 100 - 45 */
+    }
+
+    /* Estilizando o paragrafo */
+    &__p{
+        font-size: 14px; /* Tamanho da letra */
+        padding: 10px 20px; /* Espaçamento interno de 10 para cima e para baixo e 20 para os lados */
+        color: $dark_grey; /* Cor da letra */
+    }
+}
